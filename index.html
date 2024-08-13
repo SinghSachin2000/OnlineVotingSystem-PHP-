@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <style>
+        body {
+            color: azure;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .heading {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .mainbody {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .mainbody {
+                flex-direction: column-reverse;
+            }
+            .formfield, .imgfield {
+                width: 100%;
+                padding: 0 10px;
+            }
+            input, button {
+                width: 100%;
+            }
+            form {
+                width: 100%;
+            }
+        }
+
+        .indimg {
+            box-shadow: 10px 10px rgb(216, 201, 174);
+            max-width: 80%;
+            height: auto;
+        }
+
+        input, select {
+            margin: 5px;
+            font-size: large;
+            height: 60px;
+            border-radius: 20px;
+            padding: 20px;
+            background-color: rgb(231, 230, 230);
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: rgb(85, 138, 138);
+        }
+
+        button {
+            background-color: coral;
+            border-radius: 20px;
+            border: none;
+            height: 60px;
+            width: 100%;
+            margin: 10px 0;
+            color: azure;
+            font-size: x-large;
+        }
+
+        button:hover {
+            transform: scale(1.01);
+            background-color: darkorange;
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border-radius: 20px;
+            color: black;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            width: 50%;
+            margin: auto;
+        }
+
+        .loginbtn {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .formData {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h3 {
+            font-size: xx-large;
+            font-weight: bolder;
+            margin-bottom: 20px;
+        }
+
+        .formfield {
+            margin: auto;
+            padding: 20px;
+            width: 100%;
+        }
+        .imgfield {
+            width: 50%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="heading">Online Voting System</h1>
+        <hr>
+        <div class="mainbody">
+            <div class="formfield">  
+                <form action="./api/login.php" method="post"> 
+                    <div class="formData">
+                        <h3>Login</h3>
+                        <input type="number" name="mobile" placeholder="Enter Mobile number" required>
+                        <input type="password" name="password" placeholder="Enter your password" required>
+                        <select name="role" required>
+                           <option value="1">Voter</option>
+                           <option value="2">Candidate</option>
+                        </select>
+                        <button type="submit">Login</button>
+                        <div class="loginbtn"> 
+                            <span>New user? </span> 
+                            <a href="routes/register.html">Register Here</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="imgfield">
+                <img src="https://www.rastra.in/Content/User/images/to-win-2.jpg" class="indimg" alt="Voting Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

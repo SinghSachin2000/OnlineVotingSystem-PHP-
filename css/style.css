@@ -1,0 +1,16 @@
+*{
+    background-color: brown;
+}
+body{
+    background-color: brown;
+}
+.dashboard{
+    display: flex;
+    flex-direction: row;
+}
+.profile{
+    width: 45%;
+}
+.candidates{
+width: 45%;
+}

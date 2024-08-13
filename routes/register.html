@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body {
+            color: azure;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .heading {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .mainbody {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .mainbody {
+                flex-direction: column-reverse;
+            }
+            .formfield, .imgfield {
+                width: 100%;
+                padding: 0 10px;
+            }
+            input, button {
+                width: 50%;
+            }
+            form {
+                width: 100%;
+            }
+        }
+
+        .indimg {
+            box-shadow: 10px 10px  rgb(216, 201, 174);
+            max-width: 80%;
+            height: auto;
+        }
+
+        input, select {
+            margin: 5px;
+            font-size: large;
+            height: 60px;
+            border-radius: 20px;
+            padding: 20px;
+            background-color: rgb(231, 230, 230);
+            border: none;
+            width: 100%;
+            /* width: 80%; */
+            box-sizing: border-box;
+        }
+
+        .loginbtn {
+            padding: 10px;
+        }
+
+        a {
+            color: rgb(85, 138, 138);
+        }
+
+        button {
+            background-color: coral;
+            border-radius: 20px;
+            border: none;
+            height: 60px;
+            width: 100%;
+            margin: 10px 0;
+            color: azure;
+            font-size: x-large;
+        }
+
+        button:hover {
+            transform: scale(1.01);
+            background-color: darkorange;
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border-radius: 20px;
+            color: black;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .formfield {
+            margin: auto;
+            padding: 20px;
+            width: 50%;
+        }
+
+        .imgfield {
+            width: 50%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h3{
+            font-size: xx-large;
+            font-weight:bolder;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="heading">Online Voting System</h1>
+        <hr>
+        <div class="mainbody">
+            <div class="formfield">  
+                <form action="../api/register.php" method="post" enctype="multipart/form-data"> 
+                    <div class="formData">
+                        <h3>Registration</h3>
+                        <div>
+                            <input type="text" name="name" placeholder="Enter your name" required>
+                            <input type="number" name="mobile" placeholder="Enter your mobile number" required>
+                        </div> 
+                        <div>
+                            <input type="password" name="password" placeholder="Enter your password" required>
+                            <input type="password" name="cpassword" placeholder="Re-Enter your password" required>
+                        </div> 
+                        <input type="text" name="address" placeholder="Enter your Address" required>
+                        Upload Image: <input type="file" name="photo" required>
+                        Select role: 
+                        <select name="role" required>
+                           <option value="1">Voter</option>
+                           <option value="2">Candidate</option>
+                        </select>
+                        <button type="submit">Register</button>
+                        <div class="loginbtn"> 
+                            <span>Already Registered? </span> 
+                            <a href="../index.html">Login here</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="imgfield">
+                <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/40E3/production/_106311661_expander_index-03.jpg" class="indimg" alt="Voting Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
